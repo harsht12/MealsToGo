@@ -1,13 +1,12 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { RestaurantList } from './src/components/RestaurantList';
-import { SafeAreaProvider  } from 'react-native-safe-area-context';
-
+import React from "react";
+import { StyleSheet, View } from "react-native";
+import { RestaurantList } from "./src/components/RestaurantList";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 export default function App() {
   return (
-    <SafeAreaProvider>  
-      <View style={{flex:1, alignItems: 'center', justifyContent: 'center'}}>
+    <SafeAreaProvider>
+      <View style={styles.container}>
         <RestaurantList />
       </View>
     </SafeAreaProvider>
@@ -15,5 +14,9 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
 });
