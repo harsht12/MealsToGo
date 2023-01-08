@@ -1,22 +1,13 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
-import { RestaurantList } from "./src/components/RestaurantList";
+import { StatusBar as ExpoStatusBar } from "expo-status-bar";
+import { RestaurantsScreen } from "./src/features/restaurants/screens/restaurants.screen";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
 export default function App() {
   return (
     <SafeAreaProvider>
-      <View style={styles.container}>
-        <RestaurantList />
-      </View>
+      <RestaurantsScreen />
+      <ExpoStatusBar style="auto" />
     </SafeAreaProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});

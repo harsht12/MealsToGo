@@ -1,44 +1,41 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
+import { Searchbar } from "react-native-paper";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { fontSizes, spacing } from "../utils/sizes";
+import { fontSizes, spacing } from "../../../utils/sizes";
+import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
 
-export const RestaurantList = () => {
+export const RestaurantsScreen = () => {
   const insets = useSafeAreaInsets();
 
   return (
     <View
       style={{
         flex: 1,
-        alignItems: "center",
         paddingTop: insets.top,
         paddingBottom: insets.bottom,
       }}
     >
       <View style={styles.searchBar}>
-        <Text style={styles.text}>Search</Text>
+        <Searchbar placeholder="Search" />
       </View>
-      <View style={styles.container}>
-        <Text style={styles.text}>List</Text>
+      <View style={styles.list}>
+        <RestaurantInfoCard />
       </View>
     </View>
   );
 };
 
 const styles = new StyleSheet.create({
-  container: {
+  list: {
     backgroundColor: "yellow",
-    flexDirection: "row",
     flex: 1,
     padding: spacing.md,
   },
   text: {
     fontSize: fontSizes.md,
-    flex: 1,
   },
   searchBar: {
-    flexDirection: "row",
-    backgroundColor: "cyan",
     padding: spacing.md,
   },
 });
