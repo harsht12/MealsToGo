@@ -1,9 +1,19 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { View } from "react-native";
+import styled from "styled-components/native";
 import { Searchbar } from "react-native-paper";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { fontSizes, spacing } from "../../../utils/sizes";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
+
+const StyledSearchBarView = styled.View`
+  padding: 16px;
+`;
+
+const StyledRestaurantListView = styled.View`
+  background-color: yellow;
+  flex: 1;
+  padding: 16px;
+`;
 
 export const RestaurantsScreen = () => {
   const insets = useSafeAreaInsets();
@@ -16,26 +26,12 @@ export const RestaurantsScreen = () => {
         paddingBottom: insets.bottom,
       }}
     >
-      <View style={styles.searchBar}>
+      <StyledSearchBarView>
         <Searchbar placeholder="Search" />
-      </View>
-      <View style={styles.list}>
+      </StyledSearchBarView>
+      <StyledRestaurantListView>
         <RestaurantInfoCard />
-      </View>
+      </StyledRestaurantListView>
     </View>
   );
 };
-
-const styles = new StyleSheet.create({
-  list: {
-    backgroundColor: "yellow",
-    flex: 1,
-    padding: spacing.md,
-  },
-  text: {
-    fontSize: fontSizes.md,
-  },
-  searchBar: {
-    padding: spacing.md,
-  },
-});
