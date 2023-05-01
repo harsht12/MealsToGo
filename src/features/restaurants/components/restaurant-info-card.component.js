@@ -2,9 +2,10 @@ import React from "react";
 import { Text, View, Image } from "react-native";
 import { Card } from "react-native-paper";
 import { SvgXml } from "react-native-svg";
+import styled from "styled-components/native";
 import star from "../../../../assets/star";
 import open from "../../../../assets/open";
-import styled from "styled-components/native";
+import { Spacer } from "../../../components/spacer/spacer.component";
 
 const Title = styled(Text)`
   color: ${(props) => props.theme.colors.ui.primary};
@@ -83,9 +84,9 @@ export const RestaurantInfoCard = ({ restuarant = {} }) => {
                   CLOSED TEMPORARILY
                 </Text>
               )}
-              <View style={{ paddingLeft: 16 }} />
+              <Spacer variant={"left.large"} />
               {isOpenNow && <StyledSvgXml xml={open} width={20} height={20} />}
-              <View style={{ paddingLeft: 16 }} />
+              <Spacer variant={"left.large"} />
               <Image style={{ width: 15, height: 15 }} source={{ uri: icon }} />
             </SectionEnd>
           </Rating>
